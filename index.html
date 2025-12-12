@@ -3,250 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youssef El-Mesaly | Portfolio</title>
+    <title>CV - Youssef El-Mesaly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-color: #2E74B5;
-            --secondary-color: #f4f4f4;
+            --primary-color: #2c3e50; /* Bleu foncé pro */
+            --secondary-color: #3498db; /* Bleu clair digital */
             --text-color: #333;
-            --bg-color: #fff;
+            --bg-color: #f4f7f6;
+            --white: #ffffff;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            background-color: var(--secondary-color);
+            margin: 0;
+            padding: 0;
         }
 
-        /* --- HEADER SECTION --- */
-        header {
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: var(--white);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Colonne Gauche (Infos perso) */
+        .left-column {
             background-color: var(--primary-color);
-            color: white;
-            padding: 40px 20px;
+            color: var(--white);
+            width: 300px;
+            padding: 30px;
+            text-align: center;
+            flex: 1 1 300px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--secondary-color);
+            margin-bottom: 20px;
+            object-fit: cover;
+            background-color: #fff; /* Fond blanc si pas d'image */
+        }
+
+        .left-column h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .left-column .title {
+            font-size: 14px;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .contact-item i {
+            margin-right: 15px;
+            color: var(--secondary-color);
+            width: 20px;
             text-align: center;
         }
 
-        /* Style for the Profile Image */
-        .profile-img {
-            width: 150px;       /* Size of the image */
-            height: 150px;
-            border-radius: 50%; /* Makes it a perfect circle */
-            border: 4px solid white; /* White border around the photo */
-            object-fit: cover;  /* Ensures the photo doesn't stretch */
-            margin-bottom: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Soft shadow */
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-top: 10px;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 25px;
-            background-color: white;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 25px;
-            transition: 0.3s;
-        }
-
-        .contact-btn:hover {
-            background-color: #ddd;
-        }
-
-        /* Container */
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* Sections */
-        section {
-            background: white;
-            padding: 30px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            color: var(--primary-color);
+        .section-title-left {
+            text-align: left;
+            font-size: 18px;
             border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skills-list, .lang-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .skills-list li, .lang-list li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        /* Colonne Droite (Expériences & Formation) */
+        .right-column {
+            flex: 2 1 500px;
+            padding: 40px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 20px;
+            font-weight: 700;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-bottom: 25px;
+            margin-top: 30px;
+            text-transform: uppercase;
+        }
+        
+        .section-title:first-child {
             margin-top: 0;
         }
 
-        .about-text {
-            font-size: 1.1rem;
-            color: #555;
+        .profile-text {
+            margin-bottom: 30px;
+            text-align: justify;
         }
 
-        /* Timeline Items */
         .timeline-item {
-            margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 3px solid var(--primary-color);
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid #e0e0e0;
         }
 
-        .timeline-item h3 {
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        .job-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .company-date {
+            font-size: 13px;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .job-desc {
+            font-size: 14px;
             margin: 0;
-            font-size: 1.2rem;
+            padding-left: 15px;
         }
 
-        .timeline-item span {
-            color: #777;
-            font-size: 0.9rem;
-            display: block;
+        .job-desc li {
             margin-bottom: 5px;
         }
 
-        .timeline-item ul {
-            margin: 5px 0 0 20px;
-            padding: 0;
-            color: #555;
-        }
-
-        /* Skills Tags */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background-color: #e3f2fd;
-            color: var(--primary-color);
-            padding: 5px 15px;
-            border-radius: 15px;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            margin-top: 40px;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
-            .profile-img { width: 120px; height: 120px; }
-            .container { margin: 20px auto; }
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                width: 100%;
+            }
+            .left-column {
+                width: 100%;
+                text-align: center;
+            }
+            .contact-info, .skills-list, .lang-list, .section-title-left {
+                text-align: center;
+            }
+            .contact-item {
+                justify-content: center;
+            }
+            .right-column {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="https://github.com/YoussefEl-Mesaly/youssefel-mesaly.github.io/blob/main/6032719229150676857.jpg?raw=true" 
-             alt="Photo de Youssef El-Mesaly" 
-             class="profile-img">
+<div class="container">
+    <div class="left-column">
+        <img src="https://via.placeholder.com/150" alt="Youssef El-Mesaly" class="profile-img">
         
         <h1>Youssef El-Mesaly</h1>
-        <p>Junior Consultant | Sciences Économiques & Gestion | Digital</p>
-        <a href="mailto:youssefelmesaly4@gmail.com" class="contact-btn">Me Contacter</a>
-    </header>
+        <div class="title">Candidat Master Marketing Digital & E-Business</div>
 
-    <div class="container">
-
-        <section>
-            <h2>À propos de moi</h2>
-            <p class="about-text">
-                Jeune diplômé en sciences économiques et gestion, sérieux et motivé. Doté d'un bon sens de communication et d'initiative. 
-                J'ai une capacité à travailler avec différents publics et un intérêt marqué pour le développement de projets, 
-                l'accompagnement des jeunes et le digital.
-            </p>
-        </section>
-
-        <section>
-            <h2>Expériences Professionnelles</h2>
-            
-            <div class="timeline-item">
-                <h3>Participation au Recensement Général (RGPH)</h3>
-                <span>2024 | Haut Commissariat au Plan (HCP)</span>
-                <p>Participation active à la collecte de données sur le terrain dans le cadre du recensement national.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+212 6 13 29 77 34</span>
             </div>
-
-            <div class="timeline-item">
-                <h3>Formation en Soft Skills et Employabilité</h3>
-                <span>ANAPEC / INDH</span>
-                <ul>
-                    <li>Sensibilisation, orientation et accompagnement du public.</li>
-                    <li>Organisation et participation à des activités collectives.</li>
-                </ul>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>youssefelmesaly4@gmail.com</span>
             </div>
-        </section>
-
-        <section>
-            <h2>Formation Académique</h2>
-            
-            <div class="timeline-item">
-                <h3>Licence en Sciences Économiques et Gestion</h3>
-                <span>2022 | Université Sultan Moulay Slimane</span>
-                <p>Parcours Gestion.</p>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Béni Mellal, Maroc</span>
             </div>
+        </div>
 
-            <div class="timeline-item">
-                <h3>Baccalauréat SVT</h3>
-                <span>2018 | Lycée Qualifiant Al Atlas</span>
-                <p>Sciences de la Vie et de la Terre.</p>
-            </div>
-        </section>
+        <h3 class="section-title-left">Compétences</h3>
+        <ul class="skills-list">
+            <li><strong>E-Business :</strong> Amazon Merch, POD</li>
+            <li><strong>SEO :</strong> Recherche mots-clés, Optimisation</li>
+            <li><strong>Data :</strong> Google Analytics 4, Excel</li>
+            <li><strong>Design :</strong> Canva, Photoshop</li>
+            <li><strong>Soft Skills :</strong> Autonomie, Analyse</li>
+        </ul>
 
-        <section>
-            <h2>Compétences Techniques & Digitales</h2>
-            
-            <h3>Numérique & Design</h3>
-            <div class="skills-container">
-                <span class="skill-tag">Microsoft Office (Word, Excel, PPT)</span>
-                <span class="skill-tag">Adobe Photoshop</span>
-                <span class="skill-tag">Adobe Illustrator</span>
-                <span class="skill-tag">Canva</span>
-            </div>
-            <br>
-            <h3>Web & Digital</h3>
-            <div class="skills-container">
-                <span class="skill-tag">WordPress</span>
-                <span class="skill-tag">Shopify</span>
-                <span class="skill-tag">Marketing Digital</span>
-                <span class="skill-tag">Google Analytics 4</span>
-            </div>
-        </section>
-
-        <section>
-            <h2>Certifications</h2>
-            <ul>
-                <li>Marketing Digital – LinkedIn Learning</li>
-                <li>Google Analytics 4 – LinkedIn Learning</li>
-            </ul>
-        </section>
-
+        <h3 class="section-title-left">Langues</h3>
+        <ul class="lang-list">
+            <li><strong>Français :</strong> Courant (Pro)</li>
+            <li><strong>Anglais :</strong> Technique / Business</li>
+            <li><strong>Arabe :</strong> Langue maternelle</li>
+        </ul>
+        
+        <h3 class="section-title-left">Certificats</h3>
+        <ul class="skills-list">
+            <li><i class="fas fa-certificate"></i> GA4 Essential Training</li>
+            <li><i class="fas fa-certificate"></i> Digital Marketing Foundations</li>
+        </ul>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Youssef El-Mesaly. Tous droits réservés.</p>
-        <p>Zaouit Echeikh | youssefelmesaly4@gmail.com</p>
-    </footer>
+    <div class="right-column">
+        
+        <div class="section-title">Profil Professionnel</div>
+        <p class="profile-text">
+            Titulaire d'une Licence en Sciences Économiques et Gestion, j'ai consacré ces deux dernières années à une <strong>activité indépendante (Freelance)</strong> sur le marché américain pour expérimenter concrètement le E-commerce. Ayant validé mes acquis techniques sur le terrain (Amazon Merch) et par l'auto-formation, je souhaite intégrer le Master MDEB pour structurer cette expérience par une dimension stratégique.
+        </p>
+
+        <div class="section-title">Expériences Professionnelles</div>
+        
+        <div class="timeline-item">
+            <div class="job-title">Gestionnaire E-Commerce (Activité Freelance)</div>
+            <div class="company-date">Amazon Merch on Demand (Marché US) | 2023 – Présent</div>
+            <ul class="job-desc">
+                <li><strong>Référencement (SEO) :</strong> Optimisation des fiches produits pour l'algorithme Amazon (Titres, Bullet points).</li>
+                <li><strong>Analyse de Marché :</strong> Identification des niches rentables et veille concurrentielle (Trends & Evergreen).</li>
+                <li><strong>Gestion :</strong> Création de produits (POD) et respect strict de la propriété intellectuelle (Copyright/Trademark).</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item">
+            <div class="job-title">Agent Recenseur & Enquêteur</div>
+            <div class="company-date">Haut-Commissariat au Plan (HCP) | Septembre 2024</div>
+            <ul class="job-desc">
+                <li>Collecte et saisie numérique des données socio-démographiques sur le terrain.</li>
+                <li>Gestion autonome d'une zone géographique et respect des objectifs.</li>
+            </ul>
+        </div>
+
+        <div class="section-title">Formation Académique</div>
+        
+        <div class="timeline-item">
+            <div class="job-title">Licence Fondamentale en Sciences Économiques et Gestion</div>
+            <div class="company-date">Faculté Polydisciplinaire – USMS Béni Mellal | 2022</div>
+            <p style="font-size: 14px; margin-top: 5px;">
+                <strong>Projet de Fin d'Études :</strong> "Le marketing digital en période de COVID-19 : Cas d’Amazon".<br>
+                <em>Analyse de l'impact de la crise sur les stratégies logistiques et la croissance d'Amazon.</em>
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="job-title">Baccalauréat SVT</div>
+            <div class="company-date">Lycée Al Atlas, Zaouit Echeikh | 2018</div>
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>
